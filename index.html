@@ -84,6 +84,38 @@
         <p>Building modern and scalable applications.</p>
       </div>
     </div>
+    <div class="skill-ratings">
+
+  <div class="skill-bar">
+    <p>HTML</p>
+    <div class="bar">
+      <span data-width="95%"></span>
+    </div>
+  </div>
+
+  <div class="skill-bar">
+    <p>CSS</p>
+    <div class="bar">
+      <span data-width="90%"></span>
+    </div>
+  </div>
+
+  <div class="skill-bar">
+    <p>JavaScript</p>
+    <div class="bar">
+      <span data-width="75%"></span>
+    </div>
+  </div>
+
+  <div class="skill-bar">
+    <p>Python</p>
+    <div class="bar">
+      <span data-width="70%"></span>
+    </div>
+  </div>
+
+</div>
+
   </section>
 
   <!-- ===== PROJECTS SECTION ===== -->
@@ -98,10 +130,10 @@
         <h3>Vaccination Management System</h3>
         <p>A web-based system for managing vaccination records efficiently.</p>
       </div>
-      <!-- <div class="project-card">
-        <h3>food App</h3>
-        <p>Interactive task manager with local storage support.</p>
-      </div> -->
+      <div class="project-card">
+        <h3>Smart-Agriculture</h3>
+        <p>It's a IoT based project to monotoring agriculture on smart way.</p>
+      </div>
     </div>
   </section>
 
@@ -112,6 +144,28 @@
     <p>LinkedIn: <a href="https://linkedin.com" target="_blank">linkedin.com/in/yourprofile</a></p>
     <p>GitHub: <a href="https://github.com/rayho30" target="_blank">github.com/rayho30</a></p>
   </section>
+  <script>
+  const bars = document.querySelectorAll('.bar span');
+
+  function animateBars() {
+    bars.forEach(bar => {
+      const target = bar.getAttribute('data-width');
+      bar.style.width = target;
+    });
+  }
+
+  // Trigger animation when section becomes visible
+  const skillSection = document.querySelector('.skills');
+  const observer = new IntersectionObserver((entries) => {
+    if (entries[0].isIntersecting) {
+      animateBars();
+      observer.disconnect();
+    }
+  });
+
+  observer.observe(skillSection);
+</script>
+
 
   <!-- ===== FOOTER ===== -->
   <footer>
